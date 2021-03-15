@@ -9,14 +9,14 @@ let baseURL = 'http://api-breakingnews-web.itheima.net';
 // let baseURL = 'http://api-breakingnews-web.itheima.net';
 $.ajaxPrefilter(function(option) {
     option.url = baseURL + option.url;
-    console.log(option.url);
+    // console.log(option.url);
     //以 /my 开头的请求路径，需要在请求头中携带 Authorization 身份认证字段，才能正常访问成功
     if (option.url.indexOf('/my/') != -1) {
         option.headers = {
             //重新登录，因为token过期事件12小时
             Authorization: localStorage.getItem('token') || ''
         };
-        console.log(232);
+        // console.log(232);
 
     }
     //拦截所有响应，判断用户身份认证信息（登录拦截）
