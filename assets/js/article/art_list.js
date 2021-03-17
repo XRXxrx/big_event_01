@@ -47,7 +47,7 @@ $(function() {
                 let htmlStr = template('tpl-list', { data: res.data });
                 $('tbody').html(htmlStr);
                 //调用分页
-                renderPage(30);
+                renderPage(res.total);
             }
         })
     };
